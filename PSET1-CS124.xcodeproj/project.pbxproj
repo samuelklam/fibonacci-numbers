@@ -246,6 +246,7 @@
 				810F00461E3FAB2F00AF9CDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
