@@ -70,12 +70,12 @@ void matrix_mult(int M1[2][2], int M2[2][2]) {
     M1[1][1] = x11;
 }
             
-void matrix_mult_mod(int M1[2][2], int M2[2][2]) {
+void matrix_mult_mod(unsigned int M1[2][2], unsigned int M2[2][2]) {
     
-    int x00 =  ((M1[0][0]*M2[0][0]) % MODULO + (M1[0][1]*M2[1][0]) % MODULO) % MODULO;
-    int x01 =  ((M1[0][0]*M2[0][1]) % MODULO + (M1[0][1]*M2[1][1]) % MODULO) % MODULO;
-    int x10 =  ((M1[1][0]*M2[0][0]) % MODULO + (M1[1][1]*M2[1][0]) % MODULO) % MODULO;
-    int x11 =  ((M1[1][0]*M2[0][1]) % MODULO + (M1[1][1]*M2[1][1]) % MODULO) % MODULO;
+    unsigned int x00 =  ((M1[0][0] * M2[0][0]) + (M1[0][1] * M2[1][0])) % MODULO;
+    unsigned int x01 =  ((M1[0][0] * M2[0][1]) + (M1[0][1] * M2[1][1])) % MODULO;
+    unsigned int x10 =  ((M1[1][0] * M2[0][0]) + (M1[1][1] * M2[1][0])) % MODULO;
+    unsigned int x11 =  ((M1[1][0] * M2[0][1]) + (M1[1][1] * M2[1][1])) % MODULO;
     
     M1[0][0] = x00;
     M1[0][1] = x01;
@@ -95,10 +95,10 @@ void matrix_power(int M[2][2], int n) {
     if (n % 2 != 0) matrix_mult(M, N);
 }
             
-void matrix_power_mod(int M[2][2], int n) {
+void matrix_power_mod(unsigned int M[2][2], unsigned int n) {
     
     if (n == 0 || n == 1) return;
-    int N[2][2] = {{1, 1}, {1, 0}};
+    unsigned int N[2][2] = {{1, 1}, {1, 0}};
     
     matrix_power_mod(M, n/2);
     matrix_mult_mod(M, M);
@@ -113,9 +113,9 @@ int fib_matrix(int n) {
     return M[0][0];
 }
 
-int fib_matrix_mod(int n) {
+int fib_matrix_mod(unsigned int n) {
     if (n == 0 || n == 1) return n;
-    int M[2][2] = {{1, 1}, {1, 0}};
+    unsigned int M[2][2] = {{1, 1}, {1, 0}};
     matrix_power_mod(M, n-1);
     return M[0][0];
 }
@@ -141,7 +141,7 @@ int main(int argc, const char * argv[]) {
         int n_pow = (int)pow(2, j);
         start = clock();
 //        int n = fib_iterative_mod(n_pow);
-        int n = fib_matrix_mod(n_pow);
+        unsigned int n = fib_matrix_mod(n_pow);
         end = clock();
         double time_spent = (double)(end - start) / CLOCKS_PER_SEC;
         printf("%d,%d,%f\n", n_pow, n, time_spent);
@@ -151,7 +151,7 @@ int main(int argc, const char * argv[]) {
     
 //    start = clock();
 ////    int n = fib_iterative_mod(INT_MAX);
-//    int n = fib_matrix_mod(INT_MAX);
+//    unsigned int n = fib_matrix_mod(INT_MAX);
 //    end = clock();
 //    double time_spent = (double)(end - start) / CLOCKS_PER_SEC;
 //    printf("%d,%d,%f\n", INT_MAX, n, time_spent);
