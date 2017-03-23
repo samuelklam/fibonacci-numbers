@@ -14,6 +14,7 @@
 /*
  * Iterative fibonacci computation (bottom up) uses O(1) space
  * @param n : fibonacci # to compute to
+ * @return : fibonacci value for fib #
  */
 int fib_iterative(int n);
 
@@ -22,6 +23,7 @@ int fib_iterative(int n);
  * mod by 65536 to prevent integer overflow
  *
  * @param n : fibonacci # to compute to
+ * @return : fibonacci value for fib #
  */
 int fib_iterative_mod(int n);
 

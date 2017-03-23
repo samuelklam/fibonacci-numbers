@@ -42,12 +42,14 @@ void matrix_power_mod(unsigned int M[2][2], unsigned int n);
 /*
  * Calulates fibonacci # using matrices, calls matrix_power
  * @param n : fibonacci # to compute
+ * @return : fibonacci value for fib #
  */
 int fib_matrix(int n);
 
 /*
  * Calculates fibonacci # using matrices, calls matrix_power_mod to prevent int overflow
  * @param n : fibonacci # to compute
+ * @return : fibonacci value for fib #
  */
 int fib_matrix_mod(unsigned int n);
 

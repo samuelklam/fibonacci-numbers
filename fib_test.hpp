@@ -1,6 +1,5 @@
 //
 //  fib_test.hpp
-//  PSET1-CS124
 //
 //  Created by Samuel K. Lam on 3/22/17.
 //  Copyright © 2017 Samuel K. Lam. All rights reserved.
@@ -17,9 +16,10 @@
 #include "fib_matrix.hpp"
 
 /*
- * Calls appropriate fibonacci function based on fib_type passed in
+ * Calls appropriate fibonacci function and calculates fib value
  * @param fib_type : 1, 2, 3, 4, 5, 6 denotes recursive, iterative, matrix, rec_mod, it_mod, matrix_mod respectively
  * @param n : fibonacci # to compute
+ * @return fibonacci value for fibonacci #
  */
 int fib_func(int fib_type, int n);
 
