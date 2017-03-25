@@ -7,6 +7,6 @@ The repo contains 3 algorithms to compute the Fibonacci numbers:
 - `fib_iterative.cpp`: iterative solution, runs in O(n) time and O(1) space
 - `fib_matrix.cpp`: matrix solution, runs in O(log n) time
 
-The algorithms each contain `mod` implementations, which modulo computations by 65536 to prevent integer overflow.
+The algorithms each contain `mod` implementations where computations are done mod 65536 to prevent integer overflow.
 
 Time calculations can be found in `Fibonacci_Times.ipynb`.
