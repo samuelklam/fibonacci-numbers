@@ -14,7 +14,7 @@ int fib_func(int fib_type, int n) {
     else if (fib_type == 3) {
         return fib_matrix(n);
     }
-    else if (fib_type == n) {
+    else if (fib_type == 4) {
         return fib_recursive_mod(n);
     }
     else if (fib_type == 5) {
